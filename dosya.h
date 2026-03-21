@@ -9,6 +9,6 @@ typedef struct {
 } Sonuc;
 
 // dosyayi tarayip sonuclari dolduruyor
-int dosyayi_tara(const char *dosya_adi, const char *kelime, Sonuc *s);
+int dosyayi_tara(const char *dosya_adi, const char *kelime, Sonuc *s,int mod);
 
 #endif

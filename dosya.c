@@ -3,7 +3,7 @@
 #include "dosya.h"
 #include "arama.h"
 
-int dosyayi_tara(const char *dosya_adi, const char *kelime, Sonuc *s) {
+int dosyayi_tara(const char *dosya_adi, const char *kelime, Sonuc *s, int mod) {
     FILE *f;
     char satir[1024];
     int satir_no = 0;
@@ -22,7 +22,7 @@ int dosyayi_tara(const char *dosya_adi, const char *kelime, Sonuc *s) {
     // dosyayi satir satir oku
     while (fgets(satir, sizeof(satir), f) != NULL) {
         satir_no++;
-        adet = kelime_bul(satir, kelime);
+        adet = kelime_bul(satir, kelime,mod);
 
         if (adet > 0) {
             s->toplam += adet;

@@ -1,0 +1,20 @@
+# Gereksiz VS klasörleri
+.vs/
+ipch/
+
+# Derleme ara dosyaları (Bunlar asla yüklenmez)
+*.obj
+*.pdb
+*.ilk
+*.tlog
+*.lastbuildstate
+*.idb
+*.log
+
+# Proje kullanıcı ayarları
+*.user
+CppProperties.json
+
+metin_arama/x64/Debug/metin_arama.exe.recipe
+
+x64/Debug/metin_arama.exe

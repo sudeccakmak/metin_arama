@@ -9,8 +9,13 @@ int main() {
     char dosya_adi[256];
     Sonuc sonuc;
     int devam = 1;
+    int mod;
 
     printf("=== Metin Arama Sistemi ===\n\n");
+
+	printf("Arama modunu secin: \n 0: Tam kelime \n 1: Harf veya Kelime Parcasi\n");//kullanicidan arama modunu al.
+    printf(" Secimin:");
+    scanf("%d", &mod);
 
     // kullanicidan arancak kelimeyi al
     printf("Aranacak kelimeyi girin: ");
@@ -24,7 +29,7 @@ int main() {
             devam = 0;
         } else {
             // dosyayi tara
-            if (dosyayi_tara(dosya_adi, kelime, &sonuc)) {
+            if (dosyayi_tara(dosya_adi, kelime, &sonuc,mod)) {
                 // sonucu yazdir
                 rapor_yazdir(dosya_adi, kelime, &sonuc);
             }

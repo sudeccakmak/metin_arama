@@ -4,7 +4,7 @@
 #include "arama.h"
 
 // buyuk kucuk harf farketmesin diye her iki stringi de kucuk harfe cevirip karsilastiriyoruz
-int kelime_bul(const char *satir, const char *aranan) {
+int kelime_bul(const char *satir, const char *aranan, int mod) {
     char s[1024];
     char k[100];
     int i = 0;
@@ -30,11 +30,16 @@ int kelime_bul(const char *satir, const char *aranan) {
     char *ptr = s;
 
     while ((ptr = strstr(ptr, k)) != NULL) {
-        // tam kelime mi kontrol et
-        int bas = (ptr == s) || !isalnum(*(ptr - 1));
-        int son = !isalnum(*(ptr + klen));
+		if (mod == MOD_KELIME) {
+            // mod 0 ise tam kelime mi kontrol et.
+            int bas = (ptr == s) || !isalnum(*(ptr - 1));
+            int son = !isalnum(*(ptr + klen));
 
-        if (bas && son) {
+            if (bas && son) {
+                sayac++;
+            }
+        }
+        else {
             sayac++;
         }
         ptr++;
